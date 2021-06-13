@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block message %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+{% if messages %}
+    <p>{{messages[0][1]}}</p>
+{% endif %}
+{% endwith %}
+{% endblock message %}
+
+{% block contents %}
+<form action="{{url_for('edit_done',pid=post_id)}}" method="get">
+    <input type="text" value="{{post.title}}" name="title" id="title" size=80 style="height:30px;" required><br><br>
+    <input type="text" value="{{post.contents}}" name="contents" id="contents" size=80 style="height:200px;" required><br><br>
+    <button type="submit" style="border-radius: 5em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 5px;">수정완료</button>
+</form>
+{% endblock contents %}

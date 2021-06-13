@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block user %}
+{% endblock user %}
+
+{% block contents %}
+{% if length==0 %}
+<p><span style="border-radius: 15px 15px 15px 0; border-bottom: 5px solid #B9C4C4; padding: 0.5em; background: #CEDADA;">*글을 작성해주세요*</span></p>
+{% else %}
+    {% for post in post_list %}
+    <a href="{{url_for('post', pid=post[0])}}">
+        <div>
+            {{post[0]}}
+            {{post[1].title}}
+        </div>
+    </a>
+    {% endfor %}
+{% endif %}
+{% endblock contents %}

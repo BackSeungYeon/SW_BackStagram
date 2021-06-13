@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BackStagram</title>
+</head>
+<body>
+    {% block message %}
+    {% endblock message %}
+    <center>
+    <header>
+    <a href="{{url_for('index')}}"><p><span style=" border-radius: 15px 15px 0 0; border-bottom: 2px solid #B2E0F7; padding: 0.5em; background: #D8EFFB;">BackStagram</span></p></a>
+        {% block contents %}
+        {% endblock contents %}
+    </header>
+    {% block user %}
+
+    {% endblock user %}
+    <footer>
+
+    </footer>
+        </center>
+</body>
+</html>
